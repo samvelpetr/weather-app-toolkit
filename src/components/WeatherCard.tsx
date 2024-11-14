@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { addCity, removeCity } from "../redux/favorite.slice";
 import { getCityWeather } from "../redux/city.slice";
 import { IMAGE_URL, IMAGE_URL_END } from "../apiInfo";
+import Links from "./Links";
 
 const useStyles = createUseStyles(styles);
 
@@ -15,7 +16,7 @@ const WeatherCard: React.FC = () => {
 
     const dispatch = useAppDispatch();
     const city = useAppSelector((state) => state.city);
-    const favorites = useAppSelector((state) => state.favorite);
+    // const favorites = useAppSelector((state) => state.favorite);
 
     useEffect(() => {
         dispatch(getCityWeather(cityName as string));
@@ -54,26 +55,7 @@ const WeatherCard: React.FC = () => {
                 </div>
             </div>
             <div className={classes.favoriteActions}>
-                {favorites.cities.includes(city.city.name as string) ? (
-                    <button
-                        className={classes.removeFromFavorites}
-                        onClick={() => dispatch(removeCity(city.city.name))}
-                    >
-                        Remove from Favorites
-                    </button>
-                ) : (
-                    <button
-                        className={classes.addToFavorites}
-                        onClick={() => dispatch(addCity(city.city.name))}
-                    >
-                        Add to Favorites
-                    </button>
-                )}
-
-                <Link to={`/${city.city.name}/week`} className="forecast-link">
-                    5 Day Forecast
-                </Link>
-                <Link to={`/${city.city.name}/map`}>Map</Link>
+                <Links />
             </div>
         </>
     );
