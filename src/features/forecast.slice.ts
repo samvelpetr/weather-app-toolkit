@@ -16,6 +16,7 @@ const initialState:state = {
     error: ""
 }
 
+
 export const getForecastData = createAsyncThunk("forecast/getForecastData", async (cityName:string) => {
     const data = await axios.get(FORECAST_URL, {
         params: {

@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { createUseStyles } from "react-jss";
 import styles from "../styles/styles";
 import React from "react";
-import { addCity, removeCity } from "../features/favorite.slice";
+import { addCity, isCityFavoriteSelector, removeCity } from "../features/favorite.slice";
 
 const useStyles = createUseStyles(styles);
 
@@ -11,12 +11,13 @@ export const ActionButtons: React.FC = React.memo(() => {
     const classes = useStyles();
 
     const city = useAppSelector((state) => state.city);
-    const favorites = useAppSelector((state) => state.favorite);
     const dispatch = useAppDispatch();
-
+    const isFavorite = useAppSelector((state) =>
+        isCityFavoriteSelector(state.favorite, city.city.name)
+    );
     return (
         <>
-            {favorites.cities.includes(city.city.name as string) ? (
+            {isFavorite ? (
                 <button
                     className={classes.removeFromFavorites}
                     onClick={() => dispatch(removeCity(city.city.name))}

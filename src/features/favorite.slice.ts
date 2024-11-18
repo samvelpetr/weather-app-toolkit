@@ -8,6 +8,9 @@ const initialState:state = {
     cities: []
 } 
 
+export const isCityFavoriteSelector = (state:state, city:string) => state.cities.includes(city);
+
+
 const FavoriteSlice = createSlice({
     name: "favoriteCities",
     initialState,
