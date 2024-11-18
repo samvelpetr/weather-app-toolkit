@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import { ICity, ICod } from "../models/types"
 import axios from "axios"
-import { API_KEY } from "../apiInfo"
+import { API_KEY } from "../data/apiInfo"
 
 interface state {
     city:ICity,
@@ -62,6 +62,7 @@ const CityClice = createSlice({
         builder.addCase(getCityWeather.fulfilled, (state, action) => {
             state.loading = false;
             state.city = action.payload;
+            state.errorMessage = "";
         })
         .addCase(getCityWeather.pending, (state) => {
             state.loading = true;

@@ -1,7 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import { ICityForecastItem } from "../models/types"
 import axios from "axios"
-import { API_KEY, FORECAST_URL } from "../apiInfo"
+import { API_KEY, FORECAST_URL } from "../data/apiInfo"
+import { createChunks } from "../utils/chunks"
 
 interface state {
     cityInfo: ICityForecastItem[][],
@@ -43,11 +44,8 @@ export const getForecastData = createAsyncThunk("forecast/getForecastData", asyn
             };
         }
     );
-    const chunksArr = [];
-    for (let i = 0; i < formattedData.length; i += 8) {
-        chunksArr.push(formattedData.slice(i, i + 8));
-    }
-    return chunksArr;
+    
+    return createChunks(formattedData,8);
 
 })
 

@@ -1,8 +1,8 @@
 import { memo } from "react";
 import { createUseStyles } from "react-jss";
-import styles from "../styles";
-import { useAppSelector } from "../redux/hooks";
-import FavoriteCityItem from "./FavoriteCityItem";
+import styles from "../../styles/styles";
+import { useAppSelector } from "../../app/hooks";
+import FavoriteCityItem from "../../components/FavoriteCityItem";
 
 const useStyles = createUseStyles(styles);
 

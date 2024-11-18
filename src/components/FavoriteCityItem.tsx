@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { createUseStyles } from "react-jss";
-import styles from "../styles";
-import { useAppDispatch } from "../redux/hooks";
-import { removeCity } from "../redux/favorite.slice";
+import styles from "../styles/styles";
+import { useAppDispatch } from "../app/hooks";
+import { removeCity } from "../features/favorite.slice";
 
 interface IProps {
     cityData: string;

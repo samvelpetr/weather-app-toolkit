@@ -1,7 +1,7 @@
 import { createUseStyles } from "react-jss";
 import { ICityForecastItem } from "../models/types";
-import styles from "../styles";
-import { IMAGE_URL, IMAGE_URL_END } from "../apiInfo";
+import styles from "../styles/styles";
+import { IMAGE_URL, IMAGE_URL_END } from "../data/apiInfo";
 
 interface IProps {
     items: ICityForecastItem[];

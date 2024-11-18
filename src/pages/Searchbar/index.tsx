@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import UserLocation from "./TrackLocation";
+import UserLocation from "../../components/TrackLocation";
 import { useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { createUseStyles } from "react-jss";
-import styles from "../styles";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { getCityWeather } from "../redux/city.slice";
+import styles from "../../styles/styles";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { getCityWeather } from "../../features/city.slice";
 
 const useStyles = createUseStyles(styles);
 
@@ -53,7 +53,13 @@ const SearchBar: React.FC = () => {
                 value={inputCity}
                 placeholder="Enter City name"
             />
-            <button type="submit">Search</button>
+            <button
+                type="submit"
+                disabled={city.loading ? true : false}
+                className={city.loading ? classes.loadinButton : ""}
+            >
+                Search
+            </button>
             {city.errorMessage && <p>{city.errorMessage}</p>}
             <UserLocation />
             <Link to="/favorites" className={classes.favoritesLink}>

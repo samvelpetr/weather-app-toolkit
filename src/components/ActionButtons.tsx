@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { createUseStyles } from "react-jss";
-import styles from "../styles";
+import styles from "../styles/styles";
 import React from "react";
-import { addCity, removeCity } from "../redux/favorite.slice";
+import { addCity, removeCity } from "../features/favorite.slice";
 
 const useStyles = createUseStyles(styles);
 
-export const Links: React.FC = React.memo(() => {
+export const ActionButtons: React.FC = React.memo(() => {
     const classes = useStyles();
 
     const city = useAppSelector((state) => state.city);
@@ -38,4 +38,4 @@ export const Links: React.FC = React.memo(() => {
         </>
     );
 });
-export default Links;
+export default ActionButtons;

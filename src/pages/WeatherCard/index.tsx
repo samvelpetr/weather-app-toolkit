@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { createUseStyles } from "react-jss";
-import styles from "../styles";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { addCity, removeCity } from "../redux/favorite.slice";
-import { getCityWeather } from "../redux/city.slice";
-import { IMAGE_URL, IMAGE_URL_END } from "../apiInfo";
-import Links from "./Links";
+import styles from "../../styles/styles";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { addCity, removeCity } from "../../features/favorite.slice";
+import { getCityWeather } from "../../features/city.slice";
+import { IMAGE_URL, IMAGE_URL_END } from "../../data/apiInfo";
+import Links from "../../components/ActionButtons";
 
 const useStyles = createUseStyles(styles);
 

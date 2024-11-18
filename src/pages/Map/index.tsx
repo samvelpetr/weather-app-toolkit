@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useParams } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { getCityWeather } from "../redux/city.slice";
-import { API_KEY } from "../apiInfo";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { getCityWeather } from "../../features/city.slice";
+import { API_KEY } from "../../data/apiInfo";
 
 const WeatherMap: React.FC = () => {
     const { cityName } = useParams<{ cityName: string }>();

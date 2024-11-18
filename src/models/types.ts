@@ -29,11 +29,7 @@ export interface Location {
   latitude: number | null;
   longitude: number | null;
 }
-// export interface FavoriteContextType {
-//   favorites: string[];
-//   addToFavorites: (cityName: string) => void;
-//   removeFromFavorites: (cityName: string) => void;
-// }
+
 
 
 export interface ICityForecastItem {

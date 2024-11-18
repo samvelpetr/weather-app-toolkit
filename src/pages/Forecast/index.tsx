@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { createUseStyles } from "react-jss";
-import styles from "../styles";
-import ForecastItem from "./ForecastItem";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { getForecastData } from "../redux/forecast.slice";
+import styles from "../../styles/styles";
+import ForecastItem from "../../components/ForecastItem";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { getForecastData } from "../../features/forecast.slice";
 
 const useStyles = createUseStyles(styles);
 const Forecast: React.FC = () => {

@@ -1,10 +1,10 @@
 import type { Action, ThunkAction } from "@reduxjs/toolkit"
 import { combineReducers, configureStore } from "@reduxjs/toolkit"
 import { setupListeners } from "@reduxjs/toolkit/query"
-import { favoriteReducer } from "./favorite.slice";
-import { cityReducer } from "./city.slice";
-import { userCityReducer } from "./userCity.slice";
-import { forecastReducer } from "./forecast.slice";
+import { favoriteReducer } from "../features/favorite.slice";
+import { cityReducer } from "../features/city.slice";
+import { userCityReducer } from "../features/userCity.slice";
+import { forecastReducer } from "../features/forecast.slice";
 
 
 
@@ -16,7 +16,7 @@ const rootReducer = combineReducers({
 });
 export type RootState = ReturnType<typeof rootReducer>
 
-export const makeStore = (preloadedState?: Partial<RootState>) => {
+export const makeStore = () => {
   const store = configureStore({
     reducer: rootReducer,
   })

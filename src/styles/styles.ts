@@ -162,6 +162,9 @@ const styles = {
       backgroundColor: '#d9750d',
     },
   },
+  loadinButton: {
+    opacity: "0.5"
+  },
   favoriteCities: {
     display: 'flex',
     flexDirection: 'column',
@@ -308,6 +311,7 @@ const styles = {
       },
     },
   },
+  
 };
 
 export default styles;

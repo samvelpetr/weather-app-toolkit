@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom";
-import SearchBar from "./components/SearchBar";
-import WeatherCard from "./components/WeatherCard";
-import Forecast from "./components/Forecast";
-import WeatherMap from "./components/WeatherMap";
-import FavoriteCities from "./components/FavoriteCities";
+import SearchBar from "./pages/Searchbar";
+import WeatherCard from "./pages/WeatherCard";
+import Forecast from "./pages/Forecast/index";
+import WeatherMap from "./pages/Map/index";
+import FavoriteCities from "./pages/Favorite/index";
 import { Provider } from "react-redux";
-import { store } from "./redux/store";
+import { store } from "./app/store";
 
 function App() {
     return (

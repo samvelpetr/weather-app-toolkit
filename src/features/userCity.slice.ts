@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { API_KEY, WEATHER_URL } from "../apiInfo";
+import { API_KEY, WEATHER_URL } from "../data/apiInfo";
 
 
 interface GetCityParams {
